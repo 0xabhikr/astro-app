@@ -1,21 +1,27 @@
 ---
-import "../styles/global.css";
-const { content } = Astro.props;
+import "../styles/global.css"
+import Navbar from "@/components/Navbar.astro"
+
+const { title = "Abhikr" } = Astro.props
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="https://res.cloudinary.com/dgu3gae6k/image/upload/v1759546975/abhikr_uvns8e.png"
-		/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dgu3gae6k/image/upload/v1759546975/abhikr_uvns8e.png"
+    />
+
+    <title>{title}</title>
+  </head>
+
+  <body class="bg-background text-foreground">
+    <Navbar />
+    <slot />
+  </body>
 </html>
